@@ -1,5 +1,7 @@
 package com.BankManagement.Operations.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,7 +53,11 @@ public class UserController {
         userService.deposit(id, amount);
         return "Deposit successful";
     }
-
+    //Get All Users
+    @GetMapping
+    public List<UserDto> getAllUsers() {
+        return userService.getAllUsers(); // Make sure this method exists in UserService
+    }
     // Close account
     @DeleteMapping("/{id}")
     public String closeAccount(@PathVariable long id) {

@@ -1,5 +1,7 @@
 package com.BankManagement.Operations.Service;
 	
+import java.util.List;
+
 import com.BankManagement.Operations.DTO.UserDto;
 	
 	public interface UserService{
@@ -9,5 +11,6 @@ import com.BankManagement.Operations.DTO.UserDto;
 		    void deposit(long id, double amount);
 		    void closeAccount(long id);
 		    void updateName(long id, String name);
+		    List<UserDto> getAllUsers();
 	
 	}
